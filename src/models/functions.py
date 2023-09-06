@@ -18,6 +18,7 @@ def process_data(df_data):
     return df_data
 
 def fit_predict_proba(model, X_train, y_train, X_val, y_val):
+    from sklearn.metrics import roc_auc_score
     model.fit(X_train, y_train)
     y_train_pred_prob = model.predict_proba(X_train)[:,1]
     y_val_pred_prob = model.predict_proba(X_val)[:,1]
